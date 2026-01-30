@@ -3,6 +3,7 @@ import logo from "/home/toma/best-website/career-job2-client/src/assets/Team/tea
 import { IoLocationOutline, IoTimerOutline } from "react-icons/io5";
 import { FaBusinessTime } from "react-icons/fa";
 import { motion } from "motion/react";
+import MiniCard from "./MiniCard";
 
 const JobsCard = () => {
   return (
@@ -13,7 +14,11 @@ const JobsCard = () => {
           The right job for you, with 800+ new listings every day.
         </h2>
       </div>
-      <div className="card  bg-base-100 shadow-sm grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div className="">
+        <MiniCard></MiniCard>
+      </div>
+
+      <div className="card  bg-base-100 shadow-sm grid grid-cols-1 md:grid-cols-4 gap-6">
         {/* card1 */}
         <motion.div
           initial={{ y: 0 }}

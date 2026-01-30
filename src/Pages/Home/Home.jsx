@@ -4,6 +4,7 @@ import Banner from "./Banner";
 import Location from "./Location";
 import Card from "./Card";
 import JobsCard from "./JobsCard";
+
 const Home = () => {
   return (
     <div className="image">
