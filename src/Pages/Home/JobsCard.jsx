@@ -29,7 +29,7 @@ const JobsCard = ({ card }) => {
             transition: { duration: 0.1, ease: "easeOut" }, // দ্রুত উপরে উঠবে
           }}
           transition={{ duration: 0.2, ease: "easeInOut" }} // ধীরে নিচে নামবে
-          className="card-body rounded-2xl border bg-blue-100 border-gray-200 hover:border-blue-500 transition  "
+          className="card-body my-10 rounded-2xl border bg-blue-50 border-gray-200 hover:border-blue-500 transition  "
         >
           <div className="flex items-center gap-4 p-4 bg-white rounded-2xl shadow-md w-full max-w-md mx-auto">
             {/* Image */}
@@ -57,36 +57,36 @@ const JobsCard = ({ card }) => {
           <div className="">
             <p className="text-[16px] font-bold">{title}</p>
             <div className="flex gap-6 mt-2">
-              <h2 className="flex gap-2 text-gray-400">
+              <h2 className="flex gap-2 text-gray-700 font-semibold">
                 {" "}
                 <span className="text-[20px]">
                   <FaBusinessTime />
                 </span>
                 {time}
               </h2>
-              <h2 className="flex gap-2 text-gray-400">
+              <h2 className="flex gap-2 text-gray-700 font-semibold">
                 <span className="text-[20px]">
                   <IoTimerOutline />
                 </span>
                 {posted}
               </h2>
             </div>
+          </div>
 
-            <div className="text-center mt-4">
-              <p className="text-black text-[16px]">{text}</p>
-            </div>
+          <div className="float-left mt-4">
+            <p className="text-gray-600 font-semibold text-[14px] ">{text}</p>
+          </div>
 
-            <div className="join flex flex-col lg:flex-row gap-2 mt-3 w-full max-w-md mx-auto">
-              <button className="btn join-item text-gray-500 hover:bg-blue-500 hover:text-white w-full lg:w-auto">
-                App
-              </button>
-              <button className="btn join-item text-gray-500 hover:bg-blue-500 hover:text-white w-full lg:w-auto">
-                Figma
-              </button>
-              <button className="btn join-item text-gray-500 hover:bg-blue-500 hover:text-white w-full lg:w-auto">
-                PHD
-              </button>
-            </div>
+          <div className="join flex flex-col lg:flex-row gap-2 mt-4 w-full max-w-md mx-auto">
+            <button className="btn join-item text-gray-500 hover:bg-blue-500 hover:text-white w-full lg:w-auto">
+              App
+            </button>
+            <button className="btn join-item text-gray-500 hover:bg-blue-500 hover:text-white w-full lg:w-auto">
+              Figma
+            </button>
+            <button className="btn join-item text-gray-500 hover:bg-blue-500 hover:text-white w-full lg:w-auto">
+              PHD
+            </button>
           </div>
 
           <div className="flex justify-between">
@@ -98,7 +98,7 @@ const JobsCard = ({ card }) => {
             </p>
 
             <div className="mt-6">
-              <button className="btn   hover:bg-blue-600 hover:text-white">
+              <button className="btn bg-blue-200  hover:bg-blue-600 hover:text-white">
                 {button}
               </button>
             </div>

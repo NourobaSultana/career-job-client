@@ -28,7 +28,7 @@ const Stat = () => {
     },
   ];
   return (
-    <div className="stats shadow grid sm:grid-cols-2 md:grid-cols-4 gap-6 p-2 mt-12">
+    <div className="stats shadow grid sm:grid-cols-2 md:grid-cols-4 gap-6 p-2 mt-12 py-16 md:py-20 lg:py-24">
       {statsData.map((item, index) => (
         <StatCard key={index} {...item} />
       ))}

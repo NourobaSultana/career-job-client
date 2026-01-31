@@ -11,13 +11,19 @@ import { motion } from "motion/react";
 const Card = () => {
   return (
     <>
-      <div className="text-center mt-12 mb-20">
+      <div className="text-center py-16 md:py-20 lg:py-24">
         <h2 className="text-3xl font-bold">Search jobs by category</h2>
-        <h2 className="font-semibold text-xl text-gray-400">
+        <h2 className=" text-xl text-gray-400 my-2">
           The right job for you, with 800+ new listings every day.
         </h2>
       </div>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 px-4 sm:px-6 lg:px-20 mb-20">
+      <motion.div
+        animate={{
+          x: [0, -40, 0, 40, 0],
+          transition: { duration: 4, repeat: Infinity },
+        }}
+        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 px-4 sm:px-6 lg:px-20 mb-20"
+      >
         {/* Card 1*/}
         <motion.div
           initial={{ y: 0 }}
@@ -255,7 +261,7 @@ const Card = () => {
         </motion.div>
 
         {/* … baki cards same pattern … */}
-      </div>
+      </motion.div>
     </>
   );
 };

@@ -6,7 +6,7 @@ import Location from "./Location";
 
 const Banner = () => {
   return (
-    <div className="hero bg-base-200 min-h-[24rem] px-4 sm:px-6 lg:px-20">
+    <div className="hero bg-blue-50 min-h-[24rem] px-4 sm:px-6 lg:px-20">
       <div className="hero-content flex flex-col lg:flex-row-reverse items-center gap-8">
         {/* Images */}
         <div className="flex-1 flex flex-col items-center  gap-6 w-full">
@@ -32,10 +32,10 @@ const Banner = () => {
         <div className="flex-1 text-center lg:text-left w-full">
           <motion.h1
             initial={{ scale: 0 }}
-            animate={{ scale: 1, transition: { duration: 4 } }}
+            animate={{ scale: 1, transition: { duration: 2 } }}
             className="text-4xl sm:text-5xl font-bold leading-tight"
           >
-            The easiest way to secure your next{" "}
+            The Easiest Way To Secure Your Next{" "}
             <motion.span
               animate={{
                 color: ["#F54927", "#1165ED", "#DE11ED"],
@@ -46,7 +46,7 @@ const Banner = () => {
             </motion.span>
           </motion.h1>
 
-          <p className="py-4 sm:py-6 text-gray-700 text-base sm:text-lg">
+          <p className="py-4 font-semibold sm:py-6 text-gray-700 text-base sm:text-lg">
             More than 3 million job seekers visit our website every month,
             generating over 140,000 job applications daily.
           </p>

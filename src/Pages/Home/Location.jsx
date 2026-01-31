@@ -10,9 +10,9 @@ import { VscSymbolKeyword } from "react-icons/vsc";
 }
 const Location = () => {
   return (
-    <ul className="menu bg-base-200 lg:menu-horizontal rounded-box">
+    <ul className="menu px-8 py-4 bg-white lg:menu-horizontal rounded-box">
       <li>
-        <a>
+        <a className="text-xl font-semibold">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-5 w-5"
@@ -32,7 +32,7 @@ const Location = () => {
         </a>
       </li>
       <li>
-        <a>
+        <a className="text-xl font-semibold">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-5 w-5"
@@ -52,7 +52,7 @@ const Location = () => {
         </a>
       </li>
       <li>
-        <a>
+        <a className="text-xl font-semibold">
           Stats
           <span className="badge badge-xs badge-info"></span>
         </a>
