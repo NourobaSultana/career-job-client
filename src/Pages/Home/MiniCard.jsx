@@ -10,8 +10,14 @@ import { motion } from "motion/react";
 const MiniCard = () => {
   return (
     <div>
+      <div className="text-center mt-12 mb-20">
+        <h2 className="text-3xl font-bold">Search jobs by category</h2>
+        <h2 className="font-semibold text-xl text-gray-400">
+          The right job for you, with 800+ new listings every day.
+        </h2>
+      </div>
       {/* Grid container */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-4 px-4 sm:px-6 lg:px-20 mb-20">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-4 px-4  sm:px-6 lg:px-20 mb-20">
         {/* Card 1*/}
         <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 bg-white rounded-xl border border-gray-200 hover:border-blue-500 transition p-2 sm:p-4">
           {/* Icon */}

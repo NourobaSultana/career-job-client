@@ -5,20 +5,22 @@ import { FaBusinessTime } from "react-icons/fa";
 import { motion } from "motion/react";
 import MiniCard from "./MiniCard";
 
-const JobsCard = () => {
+const JobsCard = ({ card }) => {
+  const {
+    title,
+    image,
+    time,
+    location,
+    icon,
+    text,
+    descripton,
+    amount,
+    button,
+    posted,
+  } = card;
   return (
     <>
-      <div className="text-center mt-12 mb-20">
-        <h2 className="text-3xl font-bold">Search jobs by category</h2>
-        <h2 className="font-semibold text-xl text-gray-400">
-          The right job for you, with 800+ new listings every day.
-        </h2>
-      </div>
-      <div className="">
-        <MiniCard></MiniCard>
-      </div>
-
-      <div className="card  bg-base-100 shadow-sm grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div>
         {/* card1 */}
         <motion.div
           initial={{ y: 0 }}
@@ -27,125 +29,69 @@ const JobsCard = () => {
             transition: { duration: 0.1, ease: "easeOut" }, // দ্রুত উপরে উঠবে
           }}
           transition={{ duration: 0.2, ease: "easeInOut" }} // ধীরে নিচে নামবে
-          className="card-body rounded-2xl border border-gray-200 hover:border-blue-500 transition  "
+          className="card-body rounded-2xl border bg-blue-100 border-gray-200 hover:border-blue-500 transition  "
         >
-          <div className="flex gap-2 ml-3">
-            <img className="w-[60px] h-[60px] rounded-2xl" src={logo} alt="" />
-            <div className="">
-              <h2 className="text-xl font-bold">Car Toys</h2>
-              <h2 className="text-sm text-gray-400 flex">
-                <span className="text-[20px]">
-                  <IoLocationOutline />
-                </span>
-                Denmark
+          <div className="flex items-center gap-4 p-4 bg-white rounded-2xl shadow-md w-full max-w-md mx-auto">
+            {/* Image */}
+            <img
+              className="w-16 h-16 md:w-20 md:h-20 rounded-2xl object-cover flex-shrink-0"
+              src={image}
+              alt={title}
+            />
+
+            {/* Info */}
+            <div className="flex flex-col justify-center">
+              {/* Title */}
+              <h2 className="text-lg md:text-xl font-semibold text-gray-900">
+                {title}
               </h2>
+
+              {/* Location */}
+              <div className="flex items-center gap-1 text-gray-500 mt-1 text-sm md:text-base">
+                <IoLocationOutline className="text-lg md:text-xl" />
+                <span>{location}</span>
+              </div>
             </div>
           </div>
+
           <div className="">
-            <p className="text-[16px] font-bold">Figma Designer</p>
+            <p className="text-[16px] font-bold">{title}</p>
             <div className="flex gap-6 mt-2">
               <h2 className="flex gap-2 text-gray-400">
                 {" "}
                 <span className="text-[20px]">
                   <FaBusinessTime />
                 </span>
-                Full Time
+                {time}
               </h2>
               <h2 className="flex gap-2 text-gray-400">
                 <span className="text-[20px]">
                   <IoTimerOutline />
                 </span>
-                Posted 3 Years Ago
+                {posted}
               </h2>
             </div>
 
             <div className="text-center mt-4">
-              <p className="text-black text-[16px]">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui nam
-                sapiente eaque id enim! Est magni nam incidunt tenetur ad.
-              </p>
+              <p className="text-black text-[16px]">{text}</p>
             </div>
 
-            <div className="join join-vertical lg:join-horizontal gap-2 mt-3">
-              <button className="btn join-item text-gray-500">App</button>
-              <button className="btn join-item text-gray-500">Figma</button>
-              <button className="btn join-item text-gray-500">PHD</button>
-            </div>
-          </div>
-
-          <div className="flex justify-between">
-            <p className="text-blue-600 font-semibold text-2xl mt-2">
-              $5000{" "}
-              <span className="text-[12px] font-light text-gray-500">
-                /Month
-              </span>
-            </p>
-
-            <div className="mt-6">
-              <button className="btn   hover:bg-blue-600 hover:text-white">
-                Apply Now
+            <div className="join flex flex-col lg:flex-row gap-2 mt-3 w-full max-w-md mx-auto">
+              <button className="btn join-item text-gray-500 hover:bg-blue-500 hover:text-white w-full lg:w-auto">
+                App
+              </button>
+              <button className="btn join-item text-gray-500 hover:bg-blue-500 hover:text-white w-full lg:w-auto">
+                Figma
+              </button>
+              <button className="btn join-item text-gray-500 hover:bg-blue-500 hover:text-white w-full lg:w-auto">
+                PHD
               </button>
             </div>
           </div>
-        </motion.div>
-
-        {/* card1 */}
-        <motion.div
-          initial={{ y: 0 }}
-          whileHover={{
-            y: -10,
-            transition: { duration: 0.1, ease: "easeOut" }, // দ্রুত উপরে উঠবে
-          }}
-          transition={{ duration: 0.2, ease: "easeInOut" }} // ধীরে নিচে নামবে
-          className="card-body rounded-2xl border border-gray-200 hover:border-blue-500 transition  "
-        >
-          <div className="flex gap-2 ml-3">
-            <img className="w-[60px] h-[60px] rounded-2xl" src={logo} alt="" />
-            <div className="">
-              <h2 className="text-xl font-bold">Car Toys</h2>
-              <h2 className="text-sm text-gray-400 flex">
-                <span className="text-[20px]">
-                  <IoLocationOutline />
-                </span>
-                Denmark
-              </h2>
-            </div>
-          </div>
-          <div className="">
-            <p className="text-[16px] font-bold">Figma Designer</p>
-            <div className="flex gap-6 mt-2">
-              <h2 className="flex gap-2 text-gray-400">
-                {" "}
-                <span className="text-[20px]">
-                  <FaBusinessTime />
-                </span>
-                Full Time
-              </h2>
-              <h2 className="flex gap-2 text-gray-400">
-                <span className="text-[20px]">
-                  <IoTimerOutline />
-                </span>
-                Posted 3 Years Ago
-              </h2>
-            </div>
-
-            <div className="text-center mt-4">
-              <p className="text-black text-[16px]">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui nam
-                sapiente eaque id enim! Est magni nam incidunt tenetur ad.
-              </p>
-            </div>
-
-            <div className="join join-vertical lg:join-horizontal gap-2 mt-3">
-              <button className="btn join-item text-gray-500">App</button>
-              <button className="btn join-item text-gray-500">Figma</button>
-              <button className="btn join-item text-gray-500">PHD</button>
-            </div>
-          </div>
 
           <div className="flex justify-between">
             <p className="text-blue-600 font-semibold text-2xl mt-2">
-              $5000{" "}
+              {amount}{" "}
               <span className="text-[12px] font-light text-gray-500">
                 /Month
               </span>
@@ -153,427 +99,7 @@ const JobsCard = () => {
 
             <div className="mt-6">
               <button className="btn   hover:bg-blue-600 hover:text-white">
-                Apply Now
-              </button>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* card1 */}
-        <motion.div
-          initial={{ y: 0 }}
-          whileHover={{
-            y: -10,
-            transition: { duration: 0.1, ease: "easeOut" }, // দ্রুত উপরে উঠবে
-          }}
-          transition={{ duration: 0.2, ease: "easeInOut" }} // ধীরে নিচে নামবে
-          className="card-body rounded-2xl border border-gray-200 hover:border-blue-500 transition  "
-        >
-          <div className="flex gap-2 ml-3">
-            <img className="w-[60px] h-[60px] rounded-2xl" src={logo} alt="" />
-            <div className="">
-              <h2 className="text-xl font-bold">Car Toys</h2>
-              <h2 className="text-sm text-gray-400 flex">
-                <span className="text-[20px]">
-                  <IoLocationOutline />
-                </span>
-                Denmark
-              </h2>
-            </div>
-          </div>
-          <div className="">
-            <p className="text-[16px] font-bold">Figma Designer</p>
-            <div className="flex gap-6 mt-2">
-              <h2 className="flex gap-2 text-gray-400">
-                {" "}
-                <span className="text-[20px]">
-                  <FaBusinessTime />
-                </span>
-                Full Time
-              </h2>
-              <h2 className="flex gap-2 text-gray-400">
-                <span className="text-[20px]">
-                  <IoTimerOutline />
-                </span>
-                Posted 3 Years Ago
-              </h2>
-            </div>
-
-            <div className="text-center mt-4">
-              <p className="text-black text-[16px]">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui nam
-                sapiente eaque id enim! Est magni nam incidunt tenetur ad.
-              </p>
-            </div>
-
-            <div className="join join-vertical lg:join-horizontal gap-2 mt-3">
-              <button className="btn join-item text-gray-500">App</button>
-              <button className="btn join-item text-gray-500">Figma</button>
-              <button className="btn join-item text-gray-500">PHD</button>
-            </div>
-          </div>
-
-          <div className="flex justify-between">
-            <p className="text-blue-600 font-semibold text-2xl mt-2">
-              $5000{" "}
-              <span className="text-[12px] font-light text-gray-500">
-                /Month
-              </span>
-            </p>
-
-            <div className="mt-6">
-              <button className="btn   hover:bg-blue-600 hover:text-white">
-                Apply Now
-              </button>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* card1 */}
-        <motion.div
-          initial={{ y: 0 }}
-          whileHover={{
-            y: -10,
-            transition: { duration: 0.1, ease: "easeOut" }, // দ্রুত উপরে উঠবে
-          }}
-          transition={{ duration: 0.2, ease: "easeInOut" }} // ধীরে নিচে নামবে
-          className="card-body rounded-2xl border border-gray-200 hover:border-blue-500 transition  "
-        >
-          <div className="flex gap-2 ml-3">
-            <img className="w-[60px] h-[60px] rounded-2xl" src={logo} alt="" />
-            <div className="">
-              <h2 className="text-xl font-bold">Car Toys</h2>
-              <h2 className="text-sm text-gray-400 flex">
-                <span className="text-[20px]">
-                  <IoLocationOutline />
-                </span>
-                Denmark
-              </h2>
-            </div>
-          </div>
-          <div className="">
-            <p className="text-[16px] font-bold">Figma Designer</p>
-            <div className="flex gap-6 mt-2">
-              <h2 className="flex gap-2 text-gray-400">
-                {" "}
-                <span className="text-[20px]">
-                  <FaBusinessTime />
-                </span>
-                Full Time
-              </h2>
-              <h2 className="flex gap-2 text-gray-400">
-                <span className="text-[20px]">
-                  <IoTimerOutline />
-                </span>
-                Posted 3 Years Ago
-              </h2>
-            </div>
-
-            <div className="text-center mt-4">
-              <p className="text-black text-[16px]">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui nam
-                sapiente eaque id enim! Est magni nam incidunt tenetur ad.
-              </p>
-            </div>
-
-            <div className="join join-vertical lg:join-horizontal gap-2 mt-3">
-              <button className="btn join-item text-gray-500">App</button>
-              <button className="btn join-item text-gray-500">Figma</button>
-              <button className="btn join-item text-gray-500">PHD</button>
-            </div>
-          </div>
-
-          <div className="flex justify-between">
-            <p className="text-blue-600 font-semibold text-2xl mt-2">
-              $5000{" "}
-              <span className="text-[12px] font-light text-gray-500">
-                /Month
-              </span>
-            </p>
-
-            <div className="mt-6">
-              <button className="btn   hover:bg-blue-600 hover:text-white">
-                Apply Now
-              </button>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* card1 */}
-        <motion.div
-          initial={{ y: 0 }}
-          whileHover={{
-            y: -10,
-            transition: { duration: 0.1, ease: "easeOut" }, // দ্রুত উপরে উঠবে
-          }}
-          transition={{ duration: 0.2, ease: "easeInOut" }} // ধীরে নিচে নামবে
-          className="card-body rounded-2xl border border-gray-200 hover:border-blue-500 transition  "
-        >
-          <div className="flex gap-2 ml-3">
-            <img className="w-[60px] h-[60px] rounded-2xl" src={logo} alt="" />
-            <div className="">
-              <h2 className="text-xl font-bold">Car Toys</h2>
-              <h2 className="text-sm text-gray-400 flex">
-                <span className="text-[20px]">
-                  <IoLocationOutline />
-                </span>
-                Denmark
-              </h2>
-            </div>
-          </div>
-          <div className="">
-            <p className="text-[16px] font-bold">Figma Designer</p>
-            <div className="flex gap-6 mt-2">
-              <h2 className="flex gap-2 text-gray-400">
-                {" "}
-                <span className="text-[20px]">
-                  <FaBusinessTime />
-                </span>
-                Full Time
-              </h2>
-              <h2 className="flex gap-2 text-gray-400">
-                <span className="text-[20px]">
-                  <IoTimerOutline />
-                </span>
-                Posted 3 Years Ago
-              </h2>
-            </div>
-
-            <div className="text-center mt-4">
-              <p className="text-black text-[16px]">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui nam
-                sapiente eaque id enim! Est magni nam incidunt tenetur ad.
-              </p>
-            </div>
-
-            <div className="join join-vertical lg:join-horizontal gap-2 mt-3">
-              <button className="btn join-item text-gray-500">App</button>
-              <button className="btn join-item text-gray-500">Figma</button>
-              <button className="btn join-item text-gray-500">PHD</button>
-            </div>
-          </div>
-
-          <div className="flex justify-between">
-            <p className="text-blue-600 font-semibold text-2xl mt-2">
-              $5000{" "}
-              <span className="text-[12px] font-light text-gray-500">
-                /Month
-              </span>
-            </p>
-
-            <div className="mt-6">
-              <button className="btn   hover:bg-blue-600 hover:text-white">
-                Apply Now
-              </button>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* card1 */}
-        <motion.div
-          initial={{ y: 0 }}
-          whileHover={{
-            y: -10,
-            transition: { duration: 0.1, ease: "easeOut" }, // দ্রুত উপরে উঠবে
-          }}
-          transition={{ duration: 0.2, ease: "easeInOut" }} // ধীরে নিচে নামবে
-          className="card-body rounded-2xl border border-gray-200 hover:border-blue-500 transition  "
-        >
-          <div className="flex gap-2 ml-3">
-            <img className="w-[60px] h-[60px] rounded-2xl" src={logo} alt="" />
-            <div className="">
-              <h2 className="text-xl font-bold">Car Toys</h2>
-              <h2 className="text-sm text-gray-400 flex">
-                <span className="text-[20px]">
-                  <IoLocationOutline />
-                </span>
-                Denmark
-              </h2>
-            </div>
-          </div>
-          <div className="">
-            <p className="text-[16px] font-bold">Figma Designer</p>
-            <div className="flex gap-6 mt-2">
-              <h2 className="flex gap-2 text-gray-400">
-                {" "}
-                <span className="text-[20px]">
-                  <FaBusinessTime />
-                </span>
-                Full Time
-              </h2>
-              <h2 className="flex gap-2 text-gray-400">
-                <span className="text-[20px]">
-                  <IoTimerOutline />
-                </span>
-                Posted 3 Years Ago
-              </h2>
-            </div>
-
-            <div className="text-center mt-4">
-              <p className="text-black text-[16px]">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui nam
-                sapiente eaque id enim! Est magni nam incidunt tenetur ad.
-              </p>
-            </div>
-
-            <div className="join join-vertical lg:join-horizontal gap-2 mt-3">
-              <button className="btn join-item text-gray-500">App</button>
-              <button className="btn join-item text-gray-500">Figma</button>
-              <button className="btn join-item text-gray-500">PHD</button>
-            </div>
-          </div>
-
-          <div className="flex justify-between">
-            <p className="text-blue-600 font-semibold text-2xl mt-2">
-              $5000{" "}
-              <span className="text-[12px] font-light text-gray-500">
-                /Month
-              </span>
-            </p>
-
-            <div className="mt-6">
-              <button className="btn   hover:bg-blue-600 hover:text-white">
-                Apply Now
-              </button>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* card1 */}
-        <motion.div
-          initial={{ y: 0 }}
-          whileHover={{
-            y: -10,
-            transition: { duration: 0.1, ease: "easeOut" }, // দ্রুত উপরে উঠবে
-          }}
-          transition={{ duration: 0.2, ease: "easeInOut" }} // ধীরে নিচে নামবে
-          className="card-body rounded-2xl border border-gray-200 hover:border-blue-500 transition  "
-        >
-          <div className="flex gap-2 ml-3">
-            <img className="w-[60px] h-[60px] rounded-2xl" src={logo} alt="" />
-            <div className="">
-              <h2 className="text-xl font-bold">Car Toys</h2>
-              <h2 className="text-sm text-gray-400 flex">
-                <span className="text-[20px]">
-                  <IoLocationOutline />
-                </span>
-                Denmark
-              </h2>
-            </div>
-          </div>
-          <div className="">
-            <p className="text-[16px] font-bold">Figma Designer</p>
-            <div className="flex gap-6 mt-2">
-              <h2 className="flex gap-2 text-gray-400">
-                {" "}
-                <span className="text-[20px]">
-                  <FaBusinessTime />
-                </span>
-                Full Time
-              </h2>
-              <h2 className="flex gap-2 text-gray-400">
-                <span className="text-[20px]">
-                  <IoTimerOutline />
-                </span>
-                Posted 3 Years Ago
-              </h2>
-            </div>
-
-            <div className="text-center mt-4">
-              <p className="text-black text-[16px]">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui nam
-                sapiente eaque id enim! Est magni nam incidunt tenetur ad.
-              </p>
-            </div>
-
-            <div className="join join-vertical lg:join-horizontal gap-2 mt-3">
-              <button className="btn join-item text-gray-500">App</button>
-              <button className="btn join-item text-gray-500">Figma</button>
-              <button className="btn join-item text-gray-500">PHD</button>
-            </div>
-          </div>
-
-          <div className="flex justify-between">
-            <p className="text-blue-600 font-semibold text-2xl mt-2">
-              $5000{" "}
-              <span className="text-[12px] font-light text-gray-500">
-                /Month
-              </span>
-            </p>
-
-            <div className="mt-6">
-              <button className="btn   hover:bg-blue-600 hover:text-white">
-                Apply Now
-              </button>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* card1 */}
-        <motion.div
-          initial={{ y: 0 }}
-          whileHover={{
-            y: -10,
-            transition: { duration: 0.1, ease: "easeOut" }, // দ্রুত উপরে উঠবে
-          }}
-          transition={{ duration: 0.2, ease: "easeInOut" }} // ধীরে নিচে নামবে
-          className="card-body rounded-2xl border border-gray-200 hover:border-blue-500 transition  "
-        >
-          <div className="flex gap-2 ml-3">
-            <img className="w-[60px] h-[60px] rounded-2xl" src={logo} alt="" />
-            <div className="">
-              <h2 className="text-xl font-bold">Car Toys</h2>
-              <h2 className="text-sm text-gray-400 flex">
-                <span className="text-[20px]">
-                  <IoLocationOutline />
-                </span>
-                Denmark
-              </h2>
-            </div>
-          </div>
-          <div className="">
-            <p className="text-[16px] font-bold">Figma Designer</p>
-            <div className="flex gap-6 mt-2">
-              <h2 className="flex gap-2 text-gray-400">
-                {" "}
-                <span className="text-[20px]">
-                  <FaBusinessTime />
-                </span>
-                Full Time
-              </h2>
-              <h2 className="flex gap-2 text-gray-400">
-                <span className="text-[20px]">
-                  <IoTimerOutline />
-                </span>
-                Posted 3 Years Ago
-              </h2>
-            </div>
-
-            <div className="text-center mt-4">
-              <p className="text-black text-[16px]">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui nam
-                sapiente eaque id enim! Est magni nam incidunt tenetur ad.
-              </p>
-            </div>
-
-            <div className="join join-vertical lg:join-horizontal gap-2 mt-3">
-              <button className="btn join-item text-gray-500">App</button>
-              <button className="btn join-item text-gray-500">Figma</button>
-              <button className="btn join-item text-gray-500">PHD</button>
-            </div>
-          </div>
-
-          <div className="flex justify-between">
-            <p className="text-blue-600 font-semibold text-2xl mt-2">
-              $5000{" "}
-              <span className="text-[12px] font-light text-gray-500">
-                /Month
-              </span>
-            </p>
-
-            <div className="mt-6">
-              <button className="btn   hover:bg-blue-600 hover:text-white">
-                Apply Now
+                {button}
               </button>
             </div>
           </div>
