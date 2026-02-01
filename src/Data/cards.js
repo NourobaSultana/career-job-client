@@ -1,7 +1,7 @@
 const cards = [
   {
     id: 1,
-    title: "Web Development",
+    title: "Web DevOps",
     description: "HTML, CSS, JavaScript",
     icon: "🌐",
     image: "https://i.ibb.co.com/BKsbLyqP/career-logo.avif",
