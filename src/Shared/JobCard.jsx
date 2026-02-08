@@ -1,25 +1,13 @@
 import React from "react";
-import logo from "/home/toma/best-website/career-job2-client/src/assets/Team/team1.jpg";
+import { motion } from "motion/react";
 import { IoLocationOutline, IoTimerOutline } from "react-icons/io5";
 import { FaBusinessTime } from "react-icons/fa";
-import { motion } from "motion/react";
-import MiniCard from "./MiniCard";
-
-const JobsCard = ({ card }) => {
-  const {
-    title,
-    image,
-    time,
-    location,
-    icon,
-    text,
-    descripton,
-    amount,
-    button,
-    posted,
-  } = card;
+import { Link } from "react-router";
+const JobCard = ({ job }) => {
+  const { title, button, image, location, text, time, posted, amount, _id } =
+    job;
   return (
-    <>
+    <div>
       <motion.div
         initial={{ y: 0 }}
         whileHover={{ y: -10, transition: { duration: 0.1, ease: "easeOut" } }}
@@ -87,13 +75,15 @@ const JobsCard = ({ card }) => {
             <span className="text-xs font-light text-gray-500"> /Month</span>
           </p>
 
-          <button className="btn bg-blue-100 hover:bg-blue-600 hover:text-white w-full sm:w-auto">
-            {button}
-          </button>
+          <Link to={`/jobs/${_id}`}>
+            <button className="btn bg-blue-100 hover:bg-blue-600 hover:text-white w-full sm:w-auto">
+              {button}
+            </button>
+          </Link>
         </div>
       </motion.div>
-    </>
+    </div>
   );
 };
 
-export default JobsCard;
+export default JobCard;

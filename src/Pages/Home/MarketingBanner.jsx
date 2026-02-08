@@ -2,7 +2,7 @@ import React from "react";
 import banner from "../../assets/Marketing/banner.jpg";
 const MarketingBanner = () => {
   return (
-    <div className="hero bg-white py-16 md:py-20 lg:py-24">
+    <div className="hero bg-white  py-16 md:py-20 lg:py-24">
       <div className="hero-content flex flex-col lg:flex-row items-center lg:items-start justify-between gap-12 lg:gap-24 px-4 sm:px-6 lg:px-20 max-w-7xl mx-auto">
         {/* Image */}
         <img

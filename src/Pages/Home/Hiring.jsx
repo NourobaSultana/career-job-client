@@ -5,7 +5,7 @@ import hire2 from "/home/toma/best-website/career-job2-client/src/assets/Hiring/
 const Hiring = () => {
   return (
     <>
-      <div className="w-11/12 lg:w-8/12 mx-auto p-4 sm:p-6 border border-gray-100 shadow rounded-xl">
+      <div className="w-11/12 my-12 lg:w-8/12 mx-auto p-4 sm:p-6 border border-gray-100 shadow rounded-xl">
         <div className="flex items-center justify-between gap-4">
           {/* Left Image (hidden on mobile) */}
           <div className="hidden md:block">

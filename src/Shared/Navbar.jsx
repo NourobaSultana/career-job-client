@@ -34,11 +34,20 @@ const Navbar = () => {
   const links = (
     <>
       <li>
-        <NavLink>Home</NavLink>
+        <NavLink to={"/"}>Home</NavLink>
       </li>
-      <li>
-        <NavLink>Find a Job</NavLink>
-      </li>
+      {user && (
+        <>
+          <li>
+            <NavLink to="/myApplications">My Applications</NavLink>
+          </li>
+        </>
+      )}
+      {user && (
+        <li>
+          <NavLink to="/addJob">Add Job</NavLink>
+        </li>
+      )}
       <li>
         <NavLink>Recruiters</NavLink>
       </li>
